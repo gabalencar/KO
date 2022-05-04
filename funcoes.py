@@ -56,7 +56,7 @@ def cadastrar_Eventos():
     cursor = con.cursor()
     print()
     print('-' * 60)
-    print(f'\033[1;33m{"CADASTRO DE NOVO CLIENTE":=^40}\033[m')
+    print(f'\033[1;33m{"CADASTRO DE NOVO EVENTO":=^40}\033[m')
     escolha = int(input("""
     PESSOA FÍSICA [1]
     PESSOA JURÍDICA [2]
@@ -85,3 +85,15 @@ def cadastrar_Eventos():
     con.commit()
     con.close()
 
+def cadastrar_usuario():
+    con = sqlite3.connect('/home/hadassa/Documentos/IFCE/yuri/meu_banco.db')
+    cursor = con.cursor()
+    print()
+    print('-' * 60)
+    print(f'\033[1;33m{"CADASTRO DE USUARIO":=^40}\033[m')
+    nome=str(input('nome do usuario:'))
+    email=str(input('digite seu e-mail:'))
+    consultaCreate = 'INSERT INTO pessoa_Fisica (nome ,email) VALUES (?,?);'
+    cursor.execute(consultaCreate,(nome,email))
+    con.commit()
+    con.close()
