@@ -91,8 +91,8 @@ def cadastrar_usuario():
     print()
     print('-' * 60)
     print(f'\033[1;33m{"CADASTRO DE USUARIO":=^40}\033[m')
-    nome=str(input('nome do usuario:'))
-    email=str(input('digite seu e-mail:'))
+    nome = str(input('nome do usuario:'))
+    email = str(input('digite seu e-mail:'))
     consultaCreate = 'INSERT INTO pessoa_Fisica (nome ,email) VALUES (?,?);'
     cursor.execute(consultaCreate,(nome,email))
     con.commit()
