@@ -5,9 +5,10 @@ def menu_Principal():
 
 def menu_Mural():
     print("""1. Cadastrar novo evento.
-2. Atualizar evento.
-3. Deletar evento.
-4. Sair.""")
+2. Listar eventos.
+3. Atualizar evento.
+4. Deletar evento.
+5. Sair.""")
 
 def menu_Cadastros():
     print("""1. Pessoa Física.
