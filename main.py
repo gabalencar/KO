@@ -1,33 +1,66 @@
+import bancodedados
 import funcoes
 import menus
-import bancodedados
 from time import sleep
 
-print("KARIRI OPORTUNITY")
+mens = funcoes.cor_String(cod1=1, cod2=35, cod3=40, msg="KARIRI OPORTUNITY")
+print(f'{mens:.^50}')
+print()
+sleep(1)
+
+bancodedados.inicializa_bd_mural()
+bancodedados.inicializa_bd_cadastros()
 
 while True:
+    print('-' * 45)
     menus.menu_Principal()
-    escolhaMenu = int(input("OPÇÃO: "))
-    if escolhaMenu == 1:
+    escolha = int(input('OPÇÃO: '))
+    print()
+    if escolha == 1:
         while True:
+            print('-' * 45)
             menus.menu_Mural()
-            escolhaMural = int(input("OPÇÃO: "))
-            if escolhaMural == 1:
+            escolha = int(input('OPÇÃO: '))
+            print()
+            if escolha == 1:
+                sleep(0.5)
                 funcoes.cadastrar_Eventos()
-            elif escolhaMural == 2:
+            elif escolha == 2:
+                sleep(0.5)
                 funcoes.listar_Eventos()
-            elif escolhaMural == 3:
+            elif escolha == 3:
+                sleep(0.5)
                 funcoes.editar_Eventos()
-            elif escolhaMural == 4:
+            elif escolha == 4:
+                sleep(0.5)
                 funcoes.deletar_Eventos()
-            elif escolhaMural == 5:
+            elif escolha == 5:
                 break
             else:
-                print("OPÇÃO INVÁLIDA, TENTE NOVAMENTE")
-    elif escolhaMenu == 2:
-        menus.menu_Cadastros()
-        escolhaCadastros = int(input("OPÇÃO: "))
-        
-        
-
-
+                sleep(0.5)
+                print(funcoes.cor_String(cod2=31, msg="OPÇÃO INVÁLIDA! Tente Novamente."))
+    elif escolha == 2:
+        while True:
+            print('-' * 45)
+            menus.menu_Cadastros()
+            escolha = int(input('OPÇÃO: '))
+            print()
+            if escolha == 1:
+                sleep(0.5)
+                funcoes.cadastrar_pessoaFisica()
+            elif escolha == 2:
+                sleep(0.5)
+                funcoes.cadastrar_pessoaJuridica()
+            elif escolha == 3:
+                break
+            else:
+                sleep(0.5)
+                print(funcoes.cor_String(cod2=31, msg="OPÇÃO INVÁLIDA! Tente Novamente."))
+    elif escolha == 3:
+        sleep(0.5)
+        print(funcoes.cor_String(cod2=32, msg="SISTEMA FINALIZADO COM SUCESSO. ATÉ A PRÓXIMA!"))
+        print()
+        break
+    else:
+        sleep(0.5)
+        print(funcoes.cor_String(cod2=31, msg="OPÇÃO INVÁLIDA! Tente Novamente."))
