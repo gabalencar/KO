@@ -251,3 +251,20 @@ def cor_String(cod1=5, cod2=37, cod3=48, msg=""):
     return: retorna a string formatada
     """
     return f"\033[{cod1};{cod2};{cod3}m{msg}\033[m"
+#puxa os email cadrastrado no banco.
+def puxar_Email():
+    con = sqlite3.connect('banco_dados.db')
+    cursor = con.cursor()
+    cursor2 = con.cursor()
+    consuta='SELECT email FROM pessoa_Fisica;'
+    consuta2='SELECT email FROM pessoa_Juridica;'
+    cursor.execute(consuta)
+    cursor2.execute(consuta2)
+    email=[]
+    for i in cursor.fetchall():
+        email.append(i[0])
+    for i in cursor2.fetchall():
+        email.append(i[0])
+    con.close()
+    return email
+
