@@ -57,6 +57,7 @@ while True:
                 sleep(0.5)
                 print(funcoes.cor_String(cod2=31, msg="OPÇÃO INVÁLIDA! Tente Novamente."))
     elif escolha == 3:
+        funcoes.noticação_evento()
         sleep(0.5)
         print(funcoes.cor_String(cod2=32, msg="SISTEMA FINALIZADO COM SUCESSO. ATÉ A PRÓXIMA!"))
         print()

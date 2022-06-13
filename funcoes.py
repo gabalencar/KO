@@ -2,6 +2,8 @@ import sqlite3
 import random
 from time import sleep
 import datetime
+import smtplib
+from turtle import pu
 # Funções autoexplicativas 
 def cadastrar_Eventos():
     con = sqlite3.connect('banco_dados.db')
@@ -267,4 +269,25 @@ def puxar_Email():
         email.append(i[0])
     con.close()
     return email
+
+def envio_de_email(i,text):
+    sender = "Karirioportunity@gmail.com"
+    receiver = i
+
+    message = f"""\
+    Subject: eventos ativos.
+    To: {receiver}
+    From: {sender}
+
+    {text}"""
+
+    with smtplib.SMTP("localhost", 2525) as smtp:
+        smtp.login("dde8513e9027fa", "cd372aebed0cab")
+        smtp.sendmail(sender, receiver, message)
+        smtp.noop()
+
+
+def noticação_evento():
+    for i in puxar_Email():
+        envio_de_email(i,'eventos')
 
