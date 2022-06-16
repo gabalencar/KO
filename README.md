@@ -11,3 +11,4 @@ Este e um porjeto com fins academicos e de desenvouvimento das habilidades dos e
  -smtplib
 importante:
 para teste dos envios dos email foi utilizado a aplicação fake smtp.
+http://nilhcem.com/FakeSMTP/download.html
