@@ -1,11 +1,10 @@
 import sqlite3
 import random
 from time import sleep
-import datetime
 import smtplib
-from turtle import pu
+
 # Funções autoexplicativas 
-def cadastrar_Eventos():
+def cadastrar_eventos():
     con = sqlite3.connect('banco_dados.db')
     cursor = con.cursor()
     mens = cor_String(cod1=1, cod2=36, msg="CADASTRO DE EVENTOS")
@@ -17,8 +16,8 @@ Opção: """))
         if escolha == 1 or escolha == 2:
             nome_Evento = str(input('\nNome do Evento: '))
             nome_Criador = str(input('Nome do Organizador: '))
-            data_Inicio = str(input('Data de início do Evento (Utilize o formato DD/MM/AAAA): '))
-            data_Termino = str(input('Data de encerramento do Evento (Utilize o formato DD/MM/AAAA): '))
+            data_Inicio = str(input('Data de início do Evento: '))
+            data_Termino = str(input('Data de encerramento do Evento: '))
             modalidade = input('Modalidade: ')
             descricao = input('Descrição: ')
             local = input('Local do Evento: ')
@@ -281,8 +280,8 @@ def envio_de_email(i,text):
 
     {text}"""
 
-    with smtplib.SMTP("localhost", 2525) as smtp:
-        smtp.login("dde8513e9027fa", "cd372aebed0cab")
+    with smtplib.SMTP("localhost", 2525) as smtp:  # caminho, porta
+        smtp.login("dde8513e9027fa", "cd372aebed0cab") # username, senha 
         smtp.sendmail(sender, receiver, message)
         smtp.noop()
 

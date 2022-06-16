@@ -3,7 +3,7 @@ import funcoes
 import menus
 from time import sleep
 
-mens = funcoes.cor_String(cod1=1, cod2=35, cod3=40, msg="KARIRI OPORTUNITY")
+mens = funcoes.cor_String(cod1=1, cod2=35, cod3=40, msg="KARIRI OPPORTUNITY")
 print(f'{mens:.^50}')
 print()
 sleep(1)
@@ -24,7 +24,7 @@ while True:
             print()
             if escolha == 1:
                 sleep(0.5)
-                funcoes.cadastrar_Eventos()
+                funcoes.cadastrar_eventos()
             elif escolha == 2:
                 sleep(0.5)
                 funcoes.listar_Eventos()
